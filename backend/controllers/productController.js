@@ -1,6 +1,6 @@
 const Product = require('../models/product');
 
-// Create new product => /api/v1/product/new
+// Create new product => /api/v1/admin/product/new
 exports.newProduct = async (req, res, next) => {
 	const product = await Product.create(req.body);
 	res.status(201).json({
@@ -37,7 +37,7 @@ exports.getSingleProduct = async (req, res, next) => {
 	});
 };
 
-// Update Product => /api/v1/product/:id
+// Update Product => /api/v1/admin/product/:id
 exports.updateProduct = async (req, res, next) => {
 	const product = await Product.findById(req.params.id);
 
